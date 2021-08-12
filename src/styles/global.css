@@ -1,7 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap');
 
 body{
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   color: #00FF01;
   background-color: #000000;
+}
+a{
+  color: #00FF01;
+  text-decoration: none;
+}
+
+.centered-container{
+  display: flex;
+  margin-top: 5%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+
+.follow-me-text{
+  display: flex;
+  color: white;
+  margin-left: -75px;
+}
+
+.name-text{
+ font-size: 125%;
+  margin-left: -75px;
+  color: white;
+}
+
+.follow-me-links{
+  display: flex;
+  flex-direction: column;
+}
+
+.link{
+  padding-right: 20px;
+}
+
+.pikachu {
+  max-width: 200px;
+  max-height: 100px;
+  margin-bottom: -30px;
+  margin-top: -40px;
+  margin-left: -40px;
+
+}
+.pikachu-text{
+  margin: 0px;
 }
