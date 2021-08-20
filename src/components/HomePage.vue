@@ -23,7 +23,6 @@
 
       </div>
       <div>
-        <p class="name-text">Web Development by Austin Rutledge</p>
         <TerminalEffect :norepeat="true" :typeSpeed="100" :deleteSpeed="100"  :words="messages"/>
       <p class="follow-me-text">Find me on the interwebz:</p>
       </div>

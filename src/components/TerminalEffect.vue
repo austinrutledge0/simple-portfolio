@@ -1,9 +1,8 @@
 <template>
+  <div class="typewriter-animation-container">
   <p class="name-text">{{displayedString}}</p>
-
-
-
-
+    <p class="typewriter-underscore" v-if="!props.nounderscore">_</p>
+  </div>
 </template>
 
 <script>
@@ -20,6 +19,9 @@ export default {
       required: true
     },
     norepeat:{
+      type: Boolean
+    },
+    nounderscore:{
       type: Boolean
     },
     typeSpeed:{
@@ -107,7 +109,8 @@ export default {
 
     return {
       displayedString,
-      currentWordIndex
+      currentWordIndex,
+      props
     }
   },
 

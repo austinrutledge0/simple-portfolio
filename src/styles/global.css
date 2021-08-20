@@ -51,3 +51,27 @@ a{
 .pikachu-text{
   margin: 0px;
 }
+
+.typewriter-animation-container{
+  display: flex;
+  flex-direction: row;
+}
+@-webkit-keyframes underscore-blink {
+  from {opacity: 1.0;}
+  to {opacity: 0.0;}
+}
+
+.typewriter-underscore{
+  display: flex;
+  color: #00FF01;
+  font-size: 130%;
+  font-weight: bold;
+  margin-left: 4px;
+  text-decoration: blink;
+  -webkit-animation-name: underscore-blink;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:ease-in-out;
+
+}
+
