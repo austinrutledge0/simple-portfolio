@@ -24,7 +24,7 @@
       </div>
       <div>
         <p class="name-text">Web Development by Austin Rutledge</p>
-        <TerminalEffect/>
+        <TerminalEffect :norepeat="true" :typeSpeed="100" :deleteSpeed="100"  :words="messages"/>
       <p class="follow-me-text">Find me on the interwebz:</p>
       </div>
 
@@ -47,8 +47,18 @@ import TerminalEffect from "@/components/TerminalEffect";
 export default {
   name: 'HomePage',
   components: {TerminalEffect},
-  props: {
-    msg: String
+setup () {
+  const messages = [`Web Development by Austin Rutledge`];
+  console.log(messages)
+
+
+
+  return {
+    messages
   }
+},
+
+
+
 }
 </script>
