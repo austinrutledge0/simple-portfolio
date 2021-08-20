@@ -89,7 +89,6 @@ export default {
         }
       }
       else {
-        console.log('FUKKK')
         if(!props.norepeat)
         {
           setTimeout(typeMessage, props.typeSpeed)
