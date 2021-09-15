@@ -28,6 +28,9 @@ export default {
         prefixEffectArray: {
             type: Array,
         },
+        timeBetweenPrefixWordChanges: {
+            type: Number,
+        },
         typeSpeed: {
             type: Number,
             required: true,
@@ -45,26 +48,33 @@ export default {
 
         const typePrefixEffectMessage = () => {
             const currentWord = props.prefixEffectArray[currentWordIndex] + ' ' + props.prefixEffectStaticText
+            let shouldAppend = false
 
-            const shouldAppend = isFirstPass
-                ? currentWord.length !== displayedString.value.length
-                : currentWord.length !== displayedString.value.length
+            if (currentWord.length !== displayedString.value.length) {
+                shouldAppend = true
+            }
             if (shouldAppend) {
-                const indexToAppend = isFirstPass
-                    ? Math.abs(currentWord.length - displayedString.value.length - currentWord.length)
-                    : Math.abs(
-                          currentWord.length -
-                              (displayedString.value.length - props.prefixEffectStaticText.length) -
-                              currentWord.length
-                      )
-                isFirstPass
-                    ? (displayedString.value += currentWord.charAt(indexToAppend))
-                    : (displayedString.value = [
-                          displayedString.value.slice(0, indexToAppend),
-                          currentWord.charAt(indexToAppend),
-                          displayedString.value.slice(indexToAppend),
-                      ].join(''))
+                let indexToAppend
 
+                if (isFirstPass) {
+                    indexToAppend = Math.abs(currentWord.length - displayedString.value.length - currentWord.length)
+                } else {
+                    indexToAppend = Math.abs(
+                        currentWord.length -
+                            (displayedString.value.length - props.prefixEffectStaticText.length) -
+                            currentWord.length
+                    )
+                }
+
+                if (isFirstPass) {
+                    displayedString.value += currentWord.charAt(indexToAppend)
+                } else {
+                    displayedString.value = [
+                        displayedString.value.slice(0, indexToAppend),
+                        currentWord.charAt(indexToAppend),
+                        displayedString.value.slice(indexToAppend),
+                    ].join('')
+                }
                 setTimeout(typePrefixEffectMessage, props.typeSpeed)
                 return
             } else {
@@ -85,21 +95,22 @@ export default {
                 } else {
                     currentWordIndex++
                 }
-
                 typePrefixEffectMessage()
                 return
             }
         }
         const typeMessage = () => {
+          const displayedStringLength = displayedString.value.length;
             const currentWord = props.words[currentWordIndex]
-            if (displayedString.value.length === 0) {
+
+            if (displayedStringLength === 0) {
                 displayedString.value += currentWord.charAt(0)
                 setTimeout(typeMessage, props.typeSpeed)
                 return
             }
 
-            if (displayedString.value.length !== props.words[currentWordIndex].length) {
-                const charactersLeft = currentWord.length - displayedString.value.length
+            if (displayedStringLength !== currentWord.length) {
+                const charactersLeft = currentWord.length - displayedStringLength
                 const nextIndex = currentWord.length - charactersLeft
                 newCharacterIndex = nextIndex
                 displayedString.value += currentWord.charAt(newCharacterIndex)

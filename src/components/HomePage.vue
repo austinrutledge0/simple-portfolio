@@ -16,10 +16,9 @@
         </div>
         <div>
             <TerminalEffect
-                :prefix-effect-static-text="staticString"
-                :prefix-effect-array="prefixEffectArray"
+
                 :typeSpeed="200"
-                :deleteSpeed="1000"
+                :deleteSpeed="100"
                 :words="messages"
             />
             <p class="follow-me-text">Find me on the interwebz:</p>
@@ -42,7 +41,7 @@ export default {
     setup() {
         const messages = [`Web Development by Austin Rutledge`]
         const staticString = 'Development by Austin Rutledge'
-        const prefixEffectArray = ['Web', 'Desktop Application']
+        const prefixEffectArray = ['Web', 'Desktop Application', 'Alexa Skill', 'Google Assistant']
         console.log(messages)
 
         return {
