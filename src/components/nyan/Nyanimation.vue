@@ -306,6 +306,7 @@ const maxRunCount = 3;
 
 const generateNyanStart = () => {
   runCount++;
+  // generates a random coordinate along the x axis for the Nyan to start at
   return Math.floor(Math.random() * (window.innerHeight - 0 + 1)) + 0;
 }
 
@@ -332,7 +333,8 @@ const moveAnimation = () => {
 
     }
   else {
-    return
+      setTimeout(toggleNyan, 10000)
+      return
     }
 
   }

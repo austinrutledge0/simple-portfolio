@@ -28,10 +28,11 @@ export default {
         prefixEffectArray: {
             type: Array,
         },
-        timeBetweenPrefixWordChanges: {
-            type: Number,
-        },
         typeSpeed: {
+            type: Number,
+            required: true,
+        },
+        transitionDelay: {
             type: Number,
             required: true,
         },
@@ -81,7 +82,8 @@ export default {
                 if (isFirstPass) {
                     isFirstPass = false
                 }
-                deletePrefixMessage()
+                const sleepTime = Math.floor(Math.random() * (10000 - 0 + 1)) + 0
+                setTimeout(deletePrefixMessage, sleepTime)
                 return
             }
         }
@@ -100,7 +102,7 @@ export default {
             }
         }
         const typeMessage = () => {
-          const displayedStringLength = displayedString.value.length;
+            const displayedStringLength = displayedString.value.length
             const currentWord = props.words[currentWordIndex]
 
             if (displayedStringLength === 0) {
