@@ -33,7 +33,7 @@ export default {
                 projectDescription:
                     'The card management portal for the CFN Cardlock system in the Pacific Northwest. I was in charge of desigining and building the entire front end and back end.',
                 builtWith: ['React', 'Material UI', 'Typescript', 'Node.js'],
-                projectImgUrl: '../assets/images/TravelCardLogo.png'
+                projectImgUrl: 'TravelCardLogo.png'
             },
             {
                 id: 3,
@@ -43,7 +43,37 @@ export default {
                 projectDescription:
                     'Open Eugene was a Code for America Brigade that I used to be a part of in Eugene, Oregon. This used to be thier marketing website. I built the entire site. The only part of the application that was not mine was the Kubernetes integration.',
                 builtWith: ['React', 'Material UI', 'Typescript'],
-                projectImgUrl: '../assets/images/OpenEugeneLogo.png'
+                projectImgUrl: 'OpenEugeneLogo.png'
+            },
+            {
+                id: 4,
+                projectName: 'What Am I Drinking?',
+                projectUrl: 'https://www.amazon.com/Austin-What-Am-I-Drinking/dp/B07VV3LP5G/ref=sr_1_1?dchild=1&keywords=what+am+i+drinking&qid=1633669613&s=digital-skills&sr=1-1',
+                projectRepoUrl: '',
+                projectDescription:
+                    'What Am I Drinking? Puts thousands of cocktail recipes in the palm of your hand (or the voice of your speaker) on demand. You can ask for drink recipes based on a variety of search types.s',
+                builtWith: ['Node.js', 'Jovo'],
+                projectImgUrl: 'PawruLogo.svg'
+            },
+            {
+                id: 2,
+                projectName: 'CFN Travelcard Fuel System',
+                projectUrl: 'https://portal.travelcardfuels.com/',
+                projectRepoUrl: '',
+                projectDescription:
+                    'The card management portal for the CFN Cardlock system in the Pacific Northwest. I was in charge of desigining and building the entire front end and back end.',
+                builtWith: ['React', 'Material UI', 'Typescript', 'Node.js'],
+                projectImgUrl: 'TravelCardLogo.png'
+            },
+            {
+                id: 3,
+                projectName: 'OpenEugene Marketing Site',
+                projectUrl: 'https://portal.travelcardfuels.com/',
+                projectRepoUrl: 'https://github.com/austinrutledge0/openeugene-marketing-site',
+                projectDescription:
+                    'Open Eugene was a Code for America Brigade that I used to be a part of in Eugene, Oregon. This used to be thier marketing website. I built the entire site. The only part of the application that was not mine was the Kubernetes integration.',
+                builtWith: ['React', 'Material UI', 'Typescript'],
+                projectImgUrl: 'OpenEugeneLogo.png'
             },
         ]
         return {
@@ -57,5 +87,6 @@ export default {
 .projectsWrapper {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 </style>

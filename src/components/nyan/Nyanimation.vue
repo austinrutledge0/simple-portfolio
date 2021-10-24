@@ -299,7 +299,7 @@ export default {
             nyanVisibility.value = !nyanVisibility.value;
         }
         const moveAnimation = () => {
-            if(nyanY.value + 320 !== window.innerWidth)
+            if(nyanY.value + 350 !== window.innerWidth)
             {
                 nyanY.value++
                 setTimeout(moveAnimation, 1)

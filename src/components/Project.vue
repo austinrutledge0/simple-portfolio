@@ -1,6 +1,7 @@
 <template>
     <div class="project">
-        <img :src="require('@/../../assets/images/' + projectImgUrl + '')" class='projectImage'>
+
+        <img :src="require('@/assets/images/' + projectImgUrl)" class='projectImage'>
         <h3>{{ projectName }}</h3>
         <p class='projectDescription'>{{ projectDescription }}</p>
         <div class="githubButton">
@@ -21,10 +22,8 @@
     }
 }
 .projectImage {
-    flex: 1;
     width: 100%;
-    max-height: 250px;
-    height: 100%;
+    height: 250px !important;
 }
 .noProjectImage {
     display: flex;
@@ -40,7 +39,7 @@
     align-items: center;
     display: flex;
     border: 1px solid #00ff01;
-    max-width: 500px;
+    width:calc((100% - 16px) / 3)
 }
 .projectDescription{
    margin-left: 25px;
