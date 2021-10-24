@@ -4,7 +4,6 @@ body {
     font-family: 'IBM Plex Mono', monospace;
     color: #00ff01;
     background-color: #000000;
-    overflow: hidden;
 }
 a {
     color: #00ff01;
@@ -51,7 +50,6 @@ a {
 .nyan {
     max-width: 100px;
     max-height: 50px;
-
 }
 .ascii-art-text {
     margin: 0px;

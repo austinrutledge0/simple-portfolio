@@ -46,7 +46,6 @@ export default {
         const messages = [`Web Development by Austin Rutledge`]
         const staticString = 'Development by Austin Rutledge'
         const prefixEffectArray = ['Web', 'Desktop Application', 'Alexa Skill', 'Google Assistant']
-        console.log(messages)
 
         return {
             messages,
@@ -56,3 +55,8 @@ export default {
     },
 }
 </script>
+<style scoped>
+body{
+    overflow: hidden;
+}
+</style>
