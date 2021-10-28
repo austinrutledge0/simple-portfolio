@@ -1,19 +1,11 @@
 <template>
-    <!--    <div class="pikachu">-->
-    <!--        <p class="ascii-art-text">-->
-    <!--            ⣿⣿⣿⣿⣿⡏⠉⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿ ⣿⣿⣿⣿⣿⣿⠀⠀⠀⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠁⠀⣿ ⣿⣿⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠙⠿⠿⠿⠻⠿⠿⠟⠿⠛⠉⠀⠀⠀⠀⠀⣸⣿-->
-    <!--            ⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣴⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢰⣹⡆⠀⠀⠀⠀⠀⠀⣭⣷⠀⠀⠀⠸⣿⣿⣿⣿-->
-    <!--            ⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠈⠉⠀⠀⠤⠄⠀⠀⠀⠉⠁⠀⠀⠀⠀⢿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⢾⣿⣷⠀⠀⠀⠀⡠⠤⢄⠀⠀⠀⠠⣿⣿⣷⠀⢸⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⡀⠉⠀⠀⠀⠀⠀⢄⠀⢀⠀⠀⠀⠀⠉⠉⠁⠀⠀⣿⣿⣿-->
-    <!--            ⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀⠀⠀⠀⠀-->
-    <!--        </p>-->
-    <!--    </div>-->
     <Nyanimation></Nyanimation>
-
     <div class="centered-container">
         <div>
-            <a href="*" target="_blank" class="link">/about</a>
-            <a href="*" target="_blank" class="link">/contact</a>
-            <a href="*" target="_blank" class="link">/projects</a>
+            <router-link class="link" to='/about'>/about</router-link>
+            <router-link class="link" to=”/contact”>/contact</router-link>
+            <router-link class="link" to='/projects'>/projects</router-link>
+            <router-link class="link" to=”/demos”>/demos</router-link>
         </div>
         <div>
             <TerminalEffect
@@ -24,13 +16,14 @@
             />
         </div>
         <div>
-            <p class="follow-me-text">Find me on the interwebz:</p>
+            <p class="follow-me-text">Find me:</p>
         </div>
 
         <div class="follow-me-links">
             <a href="https://github.com/austinrutledge0" target="_blank" class="link">Github</a>
             <a href="https://www.linkedin.com/in/austinrutledge/" target="_blank" class="link">LinkedIn</a>
             <a href="*" target="_blank" class="link">Resume</a>
+            <a href="https://medium.com/@austinrutledge0" target="_blank" class="link">Medium Articles</a>
         </div>
     </div>
 </template>

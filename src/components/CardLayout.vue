@@ -1,14 +1,23 @@
 <template>
-    <div class="project">
-
+    <div>
+        <modal
+            v-show="isModalVisible"
+            :toggleModal="toggleModal"
+        />
         <img :src="require('@/assets/images/' + projectImgUrl)" class='projectImage'>
         <h3>{{ projectName }}</h3>
         <p class='projectDescription'>{{ projectDescription }}</p>
         <div class="githubButton">
+            <div class="builtWithRow">
+                <p>Built with:</p>
+
+               <p v-for='mw of madeWith' :key='mw'>{{mw}}</p>
+            </div>
             <div class="linkButtonContainer">
-                <a href="*">Check out {{ projectName }}</a>
+                <a :href="projectUrl" target='_blank'>Check out {{ projectName }}</a>
             </div>
         </div>
+        <button @click="toggleModal"></button>
     </div>
 </template>
 
@@ -24,6 +33,11 @@
 .projectImage {
     width: 100%;
     height: 250px !important;
+}
+.builtWithRow{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
 }
 .noProjectImage {
     display: flex;
@@ -60,21 +74,38 @@
 
 <script>
 import '../styles/global.css'
-import { ref } from 'vue'
+import {  ref } from 'vue'
+import modal from '@/components/Modal';
+import Modal from '@/components/Modal'
+
 export default {
     name: 'Project',
+    components: { Modal },
     props: {
         project: {
             type: Object,
         },
+        components:{
+            modal
+        }
+
     },
 
     setup(props) {
-        console.log(props)
-        console.log(props.project.projectDescription)
-        let projectName = ref(props.project.projectName)
-        let projectDescription = ref(props.project.projectDescription)
-        let projectImgUrl = ref(props.project.projectImgUrl)
+        const projectName = ref(props.project.projectName)
+        const projectDescription = ref(props.project.projectDescription)
+        const projectImgUrl = ref(props.project.projectImgUrl)
+        const projectUrl= ref(props.project.projectUrl)
+        const madeWith = ref(props.project.builtWith)
+        let isModalVisible = ref(false);
+
+       // const modalOpen = ref(false)
+        console.log(props.project.builtWith)
+        const toggleModal = () => {
+            isModalVisible.value = !isModalVisible.value;
+        }
+
+
         const backgroundColors = ['#D000C3', '#FF40FF', '#00FCD3', '#00FE8D', '#00FE6E']
         return {
             projectDescription,
@@ -82,6 +113,12 @@ export default {
             projectName,
             projectImgUrl,
             props,
+            projectUrl,
+            madeWith,
+            toggleModal,
+            isModalVisible
+
+
         }
     },
 }

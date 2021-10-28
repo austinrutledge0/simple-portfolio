@@ -1,17 +1,17 @@
 <template>
     <div class="projectsWrapper">
-        <Project v-for="project in projects" :key="project.id" :project="project"></Project>
+        <CardLayout v-for="project in projects" :key="project.id" :project="project"></CardLayout>
     </div>
 </template>
 
 <script>
-import Project from './Project'
+import CardLayout from './CardLayout'
 
 
 
 export default {
     name: 'ProjectsPage',
-    components: { Project },
+    components: { CardLayout },
 
     setup() {
         let projects = [
@@ -21,8 +21,8 @@ export default {
                 projectUrl: 'https://pawru.com/',
                 projectRepoUrl: '',
                 projectDescription:
-                    'A new player in the Veterinary Telemecicine industry Pawru makes booking and accessing appointments easy. I was in charge of building the entire telemedicine suite for this application using the Vonage Opentok API',
-                builtWith: ['React', 'Carbon UI', 'Typescript', 'Node.js', 'Vonage OpenTok'],
+                    'Pawru is a still unreleased platform meant to replace Petpro Connect. I was hired to build the telemedicine video player for this product. I used the Vonage OpenTok api to handle theconnection and built custom React components for all of the controls. This product was especially challenging to build as the designs were updated daily. I had to continuously redesign my components to fi t the changes.',
+                builtWith: ['React,', 'Carbon UI,', 'Typescript,', 'Node.js,', 'Vonage OpenTok Api'],
                 projectImgUrl: 'PawruLogo.svg'
             },
             {
@@ -32,7 +32,7 @@ export default {
                 projectRepoUrl: '',
                 projectDescription:
                     'The card management portal for the CFN Cardlock system in the Pacific Northwest. I was in charge of desigining and building the entire front end and back end.',
-                builtWith: ['React', 'Material UI', 'Typescript', 'Node.js'],
+                builtWith: ['React,', 'Material UI,', 'Typescript,', 'Node.js'],
                 projectImgUrl: 'TravelCardLogo.png'
             },
             {
@@ -42,38 +42,18 @@ export default {
                 projectRepoUrl: 'https://github.com/austinrutledge0/openeugene-marketing-site',
                 projectDescription:
                     'Open Eugene was a Code for America Brigade that I used to be a part of in Eugene, Oregon. This used to be thier marketing website. I built the entire site. The only part of the application that was not mine was the Kubernetes integration.',
-                builtWith: ['React', 'Material UI', 'Typescript'],
+                builtWith: ['React,', 'Material UI,', 'Typescript'],
                 projectImgUrl: 'OpenEugeneLogo.png'
             },
             {
                 id: 4,
-                projectName: 'What Am I Drinking?',
-                projectUrl: 'https://www.amazon.com/Austin-What-Am-I-Drinking/dp/B07VV3LP5G/ref=sr_1_1?dchild=1&keywords=what+am+i+drinking&qid=1633669613&s=digital-skills&sr=1-1',
-                projectRepoUrl: '',
+                projectName: 'intoCareers Marketing Site',
+                projectUrl: 'https://intocareers.org/',
+                projectRepoUrl: null,
                 projectDescription:
-                    'What Am I Drinking? Puts thousands of cocktail recipes in the palm of your hand (or the voice of your speaker) on demand. You can ask for drink recipes based on a variety of search types.s',
-                builtWith: ['Node.js', 'Jovo'],
-                projectImgUrl: 'PawruLogo.svg'
-            },
-            {
-                id: 2,
-                projectName: 'CFN Travelcard Fuel System',
-                projectUrl: 'https://portal.travelcardfuels.com/',
-                projectRepoUrl: '',
-                projectDescription:
-                    'The card management portal for the CFN Cardlock system in the Pacific Northwest. I was in charge of desigining and building the entire front end and back end.',
-                builtWith: ['React', 'Material UI', 'Typescript', 'Node.js'],
-                projectImgUrl: 'TravelCardLogo.png'
-            },
-            {
-                id: 3,
-                projectName: 'OpenEugene Marketing Site',
-                projectUrl: 'https://portal.travelcardfuels.com/',
-                projectRepoUrl: 'https://github.com/austinrutledge0/openeugene-marketing-site',
-                projectDescription:
-                    'Open Eugene was a Code for America Brigade that I used to be a part of in Eugene, Oregon. This used to be thier marketing website. I built the entire site. The only part of the application that was not mine was the Kubernetes integration.',
-                builtWith: ['React', 'Material UI', 'Typescript'],
-                projectImgUrl: 'OpenEugeneLogo.png'
+                    'For part of my degree internship I decided to step out of my comfort zone and learn Vue.js. The university wanted this rendered server side so I also had to learn Nuxt.js. Thisapplication was an excellent early learning opportunity for me because it helped me break into the world of progressive web applications and server side rendering at the same time. Ithelped me provide more value in my contract work at the time and helped me learn the basics of being a full stack web developer.',
+                builtWith: ['Vue.js,', 'Nuxt.js'],
+                projectImgUrl: 'intoCareersLogo.png'
             },
         ]
         return {

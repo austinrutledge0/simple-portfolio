@@ -1,10 +1,11 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from './components/HomePage.vue'
 import ProjectsPage from './components/ProjectsPage.vue'
 import MapPage from '@/components/map/MapPage'
+import MediumArticlesPage from '@/components/medium/MediumArticlesPage'
 
 export const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes: [
         {
             path: '/',
@@ -17,6 +18,10 @@ export const router = createRouter({
         {
             path: '/map',
             component: MapPage,
+        },
+        {
+            path: '/mediumarticles',
+            component: MediumArticlesPage,
         },
     ],
 })
