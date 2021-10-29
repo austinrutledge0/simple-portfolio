@@ -1,28 +1,22 @@
 <template>
     <div class="projectsWrapper">
-<!--        <CardLayout v-for="project in projects" :key="project.id" :project="project"></CardLayout>-->
     </div>
 </template>
 
 <script>
-//import CardLayout from '@/components/CardLayout'
-const { parse } = require('rss-to-json');
-
+const { parse } = require('rss-to-json')
 
 export default {
     name: 'ProjectsPage',
     // components: { CardLayout },
 
     setup() {
-
         (async () => {
-// TODO: setup a proxy using this info https://stackoverflow.com/questions/44468743/how-to-call-medium-rss-feed
+            // TODO: setup a proxy using this info https://stackoverflow.com/questions/44468743/how-to-call-medium-rss-feed
 
-            const rss = await parse('http://147.182.194.3:8083/https://medium.com/feed/@austinrutledge0');
-
-            console.log(JSON.stringify(rss, null, 3));
-
-        })();
+            const rss = await parse('http://147.182.194.3:8083/https://medium.com/feed/@austinrutledge0')
+            console.log(JSON.stringify(rss, null, 3))
+        })()
 
         // let projects = [
         //     {

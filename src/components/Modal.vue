@@ -2,36 +2,13 @@
     <div class="modal-backdrop">
         <div class="modal">
             <header class="modal-header">
-                <slot name="header">
-                    This is the default title!
-                </slot>
-                <button
-                    type="button"
-                    class="btn-close"
-                    @click="props.toggleModal"
-                >
-                    x
-                </button>
+                <slot name="header"> Default Title </slot>
+                <button type="button" class="btn-close" @click="props.toggleModal">x</button>
             </header>
 
             <section class="modal-body">
-                <slot name="body">
-                    This is the default body!
-                </slot>
+                <slot name="body"> Default Body </slot>
             </section>
-
-            <footer class="modal-footer">
-                <slot name="footer">
-                    This is the default footer!
-                </slot>
-                <button
-                    type="button"
-                    class="btn-green"
-                    @click="props.toggleModal"
-                >
-                    Close Modal
-                </button>
-            </footer>
         </div>
     </div>
 </template>
@@ -41,17 +18,15 @@ import '../styles/global.css'
 
 export default {
     name: 'Modal',
-    components: {  },
+    components: {},
     props: {
         toggleModal: {
             type: Function,
         },
     },
-    setup( props  ) {
-
+    setup(props) {
         return {
-            props
-
+            props,
         }
     },
 }
@@ -70,30 +45,19 @@ export default {
 }
 
 .modal {
-    background: #FFFFFF;
+    background-color: #000000;
     box-shadow: 2px 2px 20px 1px;
     overflow-x: auto;
     display: flex;
     flex-direction: column;
-}
-
-.modal-header,
-.modal-footer {
-    padding: 15px;
-    display: flex;
+    max-width: 50%;
 }
 
 .modal-header {
     position: relative;
-    border-bottom: 1px solid #eeeeee;
-    color: #4AAE9B;
+    border-bottom: 1px solid #00ff01;
+    color: #00ff01;
     justify-content: space-between;
-}
-
-.modal-footer {
-    border-top: 1px solid #eeeeee;
-    flex-direction: column;
-    justify-content: flex-end;
 }
 
 .modal-body {
@@ -110,14 +74,7 @@ export default {
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
-    color: #4AAE9B;
+    color: #00ff01;
     background: transparent;
-}
-
-.btn-green {
-    color: white;
-    background: #4AAE9B;
-    border: 1px solid #4AAE9B;
-    border-radius: 2px;
 }
 </style>
