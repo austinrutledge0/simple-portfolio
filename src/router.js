@@ -4,6 +4,7 @@ import ProjectsPage from './components/ProjectsPage.vue'
 import DemosPage from './components/DemosPage.vue'
 import MapPage from '@/components/map/MapPage'
 import MediumArticlesPage from '@/components/medium/MediumArticlesPage'
+import AboutPage from '@/components/AboutPage'
 
 export const router = createRouter({
     history: createWebHistory(),
@@ -27,6 +28,10 @@ export const router = createRouter({
         {
             path: '/demos',
             component: DemosPage,
+        },
+        {
+            path: '/about',
+            component: AboutPage,
         },
     ],
 })

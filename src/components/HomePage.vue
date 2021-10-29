@@ -5,7 +5,7 @@
             <!--            <router-link class="link" to='/about'>/about</router-link>-->
             <!--            <router-link class="link" to=”/contact”>/contact</router-link>-->
             <router-link class="link" to="/projects">/projects</router-link>
-            <router-link class="link" to="/demos">/demos</router-link>
+<!--            <router-link class="link" to="/demos">/demos</router-link>-->
         </div>
         <div>
             <TerminalEffect
