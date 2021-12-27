@@ -16,7 +16,7 @@ export default {
         let projects = [
             {
                 id: 1,
-                projectName: 'ISS Live Tracker',
+                projectName: 'ISS Location Map',
                 demoUrl: '/demos/map',
                 projectImgUrl: 'issImage.jpg',
             },

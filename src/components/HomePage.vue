@@ -5,7 +5,7 @@
             <!--            <router-link class="link" to='/about'>/about</router-link>-->
             <!--            <router-link class="link" to=”/contact”>/contact</router-link>-->
             <router-link class="link" to="/projects">/projects</router-link>
-<!--            <router-link class="link" to="/demos">/demos</router-link>-->
+            <router-link class="link" to="/demos">/demos</router-link>
         </div>
         <div>
             <TerminalEffect
@@ -22,7 +22,7 @@
         <div class="follow-me-links">
             <a href="https://github.com/austinrutledge0" target="_blank" class="link">Github</a>
             <a href="https://www.linkedin.com/in/austinrutledge/" target="_blank" class="link">LinkedIn</a>
-            <a href="*" target="_blank" class="link">Resume</a>
+            <a href="*" target="_blank" class="link" @click='openResume'>Resume</a>
             <a href="https://medium.com/@austinrutledge0" target="_blank" class="link">Medium Articles</a>
         </div>
     </div>
@@ -32,6 +32,7 @@
 import '../styles/global.css'
 import TerminalEffect from '@/components/TerminalEffect'
 import Nyanimation from '@/components/nyan/Nyanimation'
+
 export default {
     name: 'HomePage',
     components: { Nyanimation, TerminalEffect },
@@ -39,8 +40,17 @@ export default {
         const messages = [`Web Development by Austin Rutledge`]
         const staticString = 'Development by Austin Rutledge'
         const prefixEffectArray = ['Web', 'Desktop Application', 'Alexa Skill', 'Google Assistant']
+        const openResume = () => {
+           const link = document.createElement('a');
+           link.href = '/Resume.pdf';
+           link.download = 'AustinRutledgeResume.pdf';
+            link.dispatchEvent(new MouseEvent('click'));
+            window.open('/Resume.pdf', '_blank');
 
+
+        }
         return {
+            openResume,
             messages,
             staticString,
             prefixEffectArray,
