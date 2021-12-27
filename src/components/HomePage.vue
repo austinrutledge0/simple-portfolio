@@ -42,10 +42,10 @@ export default {
         const prefixEffectArray = ['Web', 'Desktop Application', 'Alexa Skill', 'Google Assistant']
         const openResume = () => {
            const link = document.createElement('a');
-           link.href = '/Resume.pdf';
+           link.href = '/AustinRutledgeResume.pdf';
            link.download = 'AustinRutledgeResume.pdf';
             link.dispatchEvent(new MouseEvent('click'));
-            window.open('/Resume.pdf', '_blank');
+            window.open('/AustinRutledgeResume.pdf', '_blank');
 
 
         }
