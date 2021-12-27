@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve --port 3000",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "pretty": "prettier src --write"
+    "pretty": "prettier src --write",
+    "prod": "vue-cli-service build --mode production"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.12.5",
