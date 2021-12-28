@@ -34,7 +34,7 @@ export default defineComponent({
         const trackingMarkers = ref([])
 
         const getIssLocation = async () => {
-            await injectAxios.get('http://api.open-notify.org/iss-now.json').then((response) => {
+            await injectAxios.get('https://api.open-notify.org/iss-now.json').then((response) => {
                 // prevent the default marker location from being marked on the map
                 if (
                     satelliteMarkerOptions.value.position.lat !== 0 &&
