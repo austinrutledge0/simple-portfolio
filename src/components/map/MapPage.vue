@@ -3,7 +3,7 @@
         <h2>Need A Custom Map? No Problem!</h2>
         <p>
             This map uses live data from the
-            <a href="http://open-notify.org/Open-Notify-API/ISS-Location-Now/">ISS Location Rest API</a> to continuously
+            <a href="https://wheretheiss.at/w/developer">Where Is The ISS At? REAT API</a> to continuously
             track and mark the location of the International Space Station above Earth.
         </p>
         <GoogleMap :api-key="apiKey" style="width: 100%; height: 500px" :center="centerCoordinates" :zoom="8">
@@ -34,7 +34,7 @@ export default defineComponent({
         const trackingMarkers = ref([])
 
         const getIssLocation = async () => {
-            await injectAxios.get('http://api.open-notify.org/iss-now.json').then((response) => {
+            await injectAxios.get('https://api.wheretheiss.at/v1/satellites/25544').then((response) => {
                 // prevent the default marker location from being marked on the map
                 if (
                     satelliteMarkerOptions.value.position.lat !== 0 &&
@@ -44,14 +44,14 @@ export default defineComponent({
                 }
 
                 centerCoordinates.value = {
-                    lat: Number(response.data.iss_position.latitude),
-                    lng: Number(response.data.iss_position.longitude),
+                    lat: Number(response.data.latitude),
+                    lng: Number(response.data.longitude),
                 }
                 satelliteMarkerOptions.value = {
                     icon: SatelliteIcon,
                     position: {
-                        lat: Number(response.data.iss_position.latitude),
-                        lng: Number(response.data.iss_position.longitude),
+                        lat: Number(response.data.latitude),
+                        lng: Number(response.data.longitude),
                     },
                 }
             })
@@ -59,10 +59,10 @@ export default defineComponent({
 
         onMounted(() => {
             getIssLocation()
-            // Poll the ISS coordinates every 5 seconds. This is the fastest poll rate approved by the docs. Please be respectful of their limitations when forking this code
+            // Poll the ISS coordinates every second. This is the fastest poll rate approved by the docs. Please be respectful of their limitations when forking this code
             setInterval(() => {
                 getIssLocation()
-            }, 5000)
+            }, 1000)
         })
 
         return { centerCoordinates, SatelliteIcon, DotIcon, trackingMarkers, apiKey, satelliteMarkerOptions }
