@@ -3,7 +3,7 @@
         <h2>Need A Custom Map? No Problem!</h2>
         <p>
             This map uses live data from the
-            <a href="http://open-notify.org/Open-Notify-API/ISS-Location-Now/">ISS Location Rest API</a> to continuously
+            <a href="https://open-notify.org/Open-Notify-API/ISS-Location-Now/">ISS Location Rest API</a> to continuously
             track and mark the location of the International Space Station above Earth.
         </p>
         <GoogleMap :api-key="apiKey" style="width: 100%; height: 500px" :center="centerCoordinates" :zoom="8">
