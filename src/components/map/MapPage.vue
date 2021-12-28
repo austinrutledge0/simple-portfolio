@@ -2,9 +2,9 @@
     <div v-if="centerCoordinates.lng !== 0 && centerCoordinates.lat !== 0">
         <h2>Need A Custom Map? No Problem!</h2>
         <p>
-            This map uses live data from the
-            <a href="https://wheretheiss.at/w/developer">Where Is The ISS At? REAT API</a> to continuously
-            track and mark the location of the International Space Station above Earth.
+            This map uses the
+            <a href="https://wheretheiss.at/w/developer">Where Is The ISS At? REST API</a> to continuously
+            track and mark the location of the International Space Station above Earth. The data is updated every 2 seconds.
         </p>
         <GoogleMap :api-key="apiKey" style="width: 100%; height: 500px" :center="centerCoordinates" :zoom="8">
             <Marker :options="satelliteMarkerOptions" />
@@ -62,7 +62,7 @@ export default defineComponent({
             // Poll the ISS coordinates every second. This is the fastest poll rate approved by the docs. Please be respectful of their limitations when forking this code
             setInterval(() => {
                 getIssLocation()
-            }, 1000)
+            }, 2000)
         })
 
         return { centerCoordinates, SatelliteIcon, DotIcon, trackingMarkers, apiKey, satelliteMarkerOptions }
